@@ -1,7 +1,8 @@
-nameNode=devnamenode
+nameNode={$hosname}
 timeStamp=`date +%Y-%m-%d-%H-%M`
 twoDayAgo=`date +%Y-%m-%d --date="1 day ago"`
-backupdir=/mysql/dump/namenode_backup
+
+backupdir=${dir}
 workDir=${backupdir}/work
 
 curl -s http://${nameNode}:50070/getimage?getimage=1 > $workDir/fsimage

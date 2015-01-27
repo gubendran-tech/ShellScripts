@@ -1,0 +1,3 @@
+0 11 * * * /appl/petrasolar/analytics/scripts/backup_scripts/history_cleanup.sh 2>&1  > /appl/petrasolar/analytics/scripts/backup_scripts/history_cleanup.log
+
+0,30 * * * *  /appl/petrasolar/analytics/scripts/backup_scripts/process_capture.sh 2>&1 > /appl/petrasolar/analytics/scripts/backup_scripts/process_capture.log
