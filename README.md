@@ -1,0 +1,1 @@
+In every production environment we need some maintenance scripts to take the backups and other activities to be performed. This project contains most of the maintenance scripts every project / company need
