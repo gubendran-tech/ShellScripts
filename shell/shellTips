@@ -1,3 +1,26 @@
 Switch to shell user
 --------------------
 sudo su -s /bin/bash jenkins 
+
+Prerouting port 
+----------------
+iptables -A PREROUTING -t nat -i ens5 -p tcp --dport 80 -j REDIRECT --to-port 8080 -m comment --comment "redirect port 80 to jenkins"
+
+iptables-save > /etc/sysconfig/iptables
+iptables -L -n -t nat
+ /sbin/iptables-restore /etc/sysconfig/iptables
+ 
+ Add the same in /etc/systemd/system/<files> to execute all time in reboot
+ [Unit]
+Description=Routing rule for port 80 to 8080
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=root
+ExecStart=/sbin/iptables-restore /etc/sysconfig/iptables
+
+[Install]
+WantedBy=multi-user.target
