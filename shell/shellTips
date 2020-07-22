@@ -1,0 +1,3 @@
+Switch to shell user
+--------------------
+sudo su -s /bin/bash jenkins 
