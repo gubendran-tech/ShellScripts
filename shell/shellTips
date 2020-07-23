@@ -24,3 +24,7 @@ ExecStart=/sbin/iptables-restore /etc/sysconfig/iptables
 
 [Install]
 WantedBy=multi-user.target
+
+Maven symbolic link:
+---------------------
+ln -s /usr/lib/apache-maven-3.6.3/bin/mvn /usr/bin/mvn
