@@ -28,3 +28,11 @@ WantedBy=multi-user.target
 Maven symbolic link:
 ---------------------
 ln -s /usr/lib/apache-maven-3.6.3/bin/mvn /usr/bin/mvn
+
+Show network status in Mac: (Displays routing tables & internet 6)
+-------------------------------------------------------------
+netstat -rn
+
+Check the listening port in linux
+--------------------------------
+netstat -tulpn | grep LISTEN
